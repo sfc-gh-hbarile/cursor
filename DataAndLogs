@@ -1,0 +1,9 @@
+SELECT N_NATIONKEY, N_NAME, N_REGIONKEY, N_COMMENT
+                FROM SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.NATION;
+
+-- view errors and logs via the Snowflake events table
+SHOW PARAMETERS LIKE 'EVENT_TABLE' IN ACCOUNT;
+
+select *  
+FROM snowflake.telemetry.events
+ORDER BY TIMESTAMP DESC; -- Or your timestamp column
